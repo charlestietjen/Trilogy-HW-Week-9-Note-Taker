@@ -14,7 +14,7 @@ router.post('/notes', (req, res) => {
     currentNotes.push(note);
     currentNotes = JSON.stringify(currentNotes);
     write('./db/db.json', currentNotes);
-    res.status(200).send('Request received.');
+    res.send(note);
 });
 
 router.delete('/notes', (req, res) => {
