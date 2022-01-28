@@ -4,7 +4,7 @@ const log = console.log;
 
 const { error, success } = require("./utils/logFuncs");
 
-const PORT = process.env.port || 3001;
+const PORT = process.env.PORT || 3001;
 const app = express();
 const apiRoutes = require('./routes/apiRoutes');
 const htmlRoutes = require('./routes/htmlRoutes');
