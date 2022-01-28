@@ -9,7 +9,7 @@ router.get('/notes', (req, res) => {
 
 router.post('/notes', (req, res) => {
     let note = req.body;
-    note.id = Math.floor((Math.random() * 9999) + 0);
+    note.id = String(Math.floor((Math.random() * 9999) + 0));
     let currentNotes = notes;
     currentNotes.push(note);
     currentNotes = JSON.stringify(currentNotes);
@@ -17,8 +17,15 @@ router.post('/notes', (req, res) => {
     res.send(note);
 });
 
-router.delete('/notes', (req, res) => {
-
+router.delete('/notes/:id', (req, res) => {
+    // console.log(req.params)
+    notes.forEach(function(n, i) { 
+        if (req.params.id === n.id){
+            notes.splice(i, 1);
+        }
+    })
+    write('./db/db.json', JSON.stringify(notes));
+    res.send(notes);
 });
 
 module.exports = router;
