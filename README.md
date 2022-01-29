@@ -26,6 +26,9 @@ Available for use under. [![License](https://img.shields.io/badge/License-CC_BY_
 ## Screenshot
 ![Project Screenshot](./img/project-ss.png?raw=true)
 
+## Deployed Application
+[Heroku Link](https://charles-tietjen-note-taker.herokuapp.com/)
+
  
 ## Installation
 The server requires express to operate and also utlizes chalk for colored log messages. Type "npm i" from the root directory of the application to install them and their dependencies.
